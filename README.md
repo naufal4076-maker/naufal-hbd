@@ -1,1 +1,744 @@
-# naufal-hbd
+[bla.html](https://github.com/user-attachments/files/23573158/bla.html)
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Selamat Ulang Tahun, Ayah dan selamat hari Ayah!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      :root {
+        --bg: #0e0f14; /* latar belakang */
+        --card: #151827; /* kartu */
+        --soft: #aab1c7; /* teks lembut */
+        --text: #e9ecf8; /* teks utama */
+        --brand: #7c4dff; /* aksen ungu */
+        --brand-2: #00e0b8; /* aksen hijau kebiruan */
+        --radius: 18px;
+        --max: 1080px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, Noto Sans, Arial;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 600px at 10% -10%,
+            #1c1f33 0%,
+            transparent 60%
+          ),
+          radial-gradient(1200px 800px at 110% 10%, #14162a 0%, transparent 60%),
+          linear-gradient(180deg, #0b0c12, var(--bg));
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+        background: linear-gradient(#0e1018cc, #0e1018cc);
+        border-bottom: 1px solid #232842;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 20px;
+        max-width: var(--max);
+        margin: auto;
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.5px;
+      }
+      .nav a {
+        opacity: 0.9;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 10px;
+      }
+      .nav a:hover {
+        background: #232742;
+      }
+
+      .container {
+        max-width: var(--max);
+        margin: auto;
+        padding: 28px 20px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+        align-items: center;
+        padding-top: 24px;
+      }
+      .hero .title {
+        font-size: clamp(32px, 5vw, 64px);
+        line-height: 1.05;
+        font-weight: 800;
+        margin: 0;
+      }
+      .hero .subtitle {
+        color: var(--soft);
+        margin: 0.6rem 0 1.2rem;
+      }
+      .badge {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        background: linear-gradient(90deg, #2a2f52, #20324b);
+        border: 1px solid #2d355f;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 14px;
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .btn {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-weight: 600;
+      }
+      .btn.primary {
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        color: #0b0e14;
+      }
+      .btn.ghost {
+        background: #222744;
+        color: var(--text);
+        border: 1px solid #2e365f;
+      }
+      .hero-card {
+        background: linear-gradient(180deg, #171b31, #121528);
+        border: 1px solid #262c4b;
+        padding: 18px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .hero-card .photo {
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #2b3256;
+      }
+      .hero-card .caption {
+        font-size: 14px;
+        color: var(--soft);
+        margin-top: 8px;
+      }
+
+      .section {
+        margin-top: 56px;
+      }
+      .section h2 {
+        font-size: clamp(22px, 3.5vw, 32px);
+        margin: 0 0 12px;
+      }
+      .muted {
+        color: var(--soft);
+      }
+
+      .countdown {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .cd {
+        background: linear-gradient(180deg, #171b31, #111425);
+        border: 1px solid #22294a;
+        border-radius: 16px;
+        padding: 14px;
+        text-align: center;
+      }
+      .cd b {
+        font-size: clamp(22px, 4vw, 36px);
+      }
+      .cd span {
+        display: block;
+        color: var(--soft);
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 16px;
+      }
+      .tl {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 14px;
+        align-items: start;
+        background: linear-gradient(180deg, #151933, #101326);
+        border: 1px solid #262c49;
+        border-radius: 16px;
+        padding: 14px;
+      }
+      .tl .year {
+        font-weight: 800;
+        font-size: 18px;
+        background: linear-gradient(90deg, #343b6a, #243a55);
+        border: 1px solid #2f3560;
+        padding: 10px 12px;
+        border-radius: 12px;
+        text-align: center;
+      }
+      .tl .text {
+        color: #dfe3f6;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+      }
+      .gallery .g {
+        grid-column: span 2;
+        aspect-ratio: 4/3;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #2a3156;
+      }
+      .gallery .g.tall {
+        grid-row: span 2;
+        aspect-ratio: 3/4;
+      }
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card {
+        background: linear-gradient(180deg, #151933, #101326);
+        border: 1px solid #262c49;
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      .wishbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .wishbox input,
+      .wishbox textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid #2d3154;
+        background: #0f1225;
+        color: var(--text);
+      }
+      .wishbox textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      footer {
+        margin-top: 64px;
+        padding: 32px 20px;
+        text-align: center;
+        color: var(--soft);
+      }
+
+      .floating {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 60;
+      }
+      .fab {
+        border: none;
+        border-radius: 999px;
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        color: #071018;
+      }
+      .fab.secondary {
+        background: #20264a;
+        color: var(--text);
+        border: 1px solid #2e3560;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .gallery {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .gallery .g {
+          grid-column: span 2;
+        }
+      }
+      @media (max-width: 560px) {
+        .countdown {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .gallery .g {
+          grid-column: span 1;
+        }
+      }
+
+      /* ===== PRANK OVERLAY ===== */
+      #prank {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(
+            900px 500px at 20% -10%,
+            #20264acc,
+            transparent 60%
+          ),
+          radial-gradient(900px 600px at 120% 10%, #121735cc, transparent 60%),
+          linear-gradient(180deg, #0b0e18ee, #0b0e18ee);
+        backdrop-filter: blur(6px);
+      }
+      .prank-card {
+        width: min(560px, 92vw);
+        background: linear-gradient(180deg, #161a33, #0f1326);
+        border: 1px solid #2a3156;
+        border-radius: 18px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+      .prank-title {
+        margin: 0 0 6px;
+        font-size: clamp(20px, 3.4vw, 28px);
+      }
+      .prank-text {
+        margin: 0.25rem 0 1rem;
+        color: var(--soft);
+      }
+      .prank-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .prank-hint {
+        margin: 0.8rem 0 0;
+        font-size: 13px;
+        color: #9aa6c9;
+      }
+      .prank-close {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        background: #20264a;
+        color: var(--text);
+        border: 1px solid #2e3560;
+        border-radius: 10px;
+        padding: 6px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PRANK OVERLAY: tampil saat halaman dibuka, minta Ayah menekan tombol berkali-kali -->
+    <div id="prank" aria-live="polite">
+      <div class="prank-card">
+        <button class="prank-close" id="prankSkip" title="Lewati">
+          Lewati
+        </button>
+        <h2 class="prank-title">Hadiah kecil untuk Ayah 🎁</h2>
+        <p class="prank-text" id="prankText">Tekan tombol di bawah ini.</p>
+        <div class="prank-actions">
+          <button class="btn primary" id="prankBtn">Tekan</button>
+        </div>
+        <p class="prank-hint" id="prankHint"></p>
+      </div>
+    </div>
+    <header>
+      <nav class="nav">
+        <div class="brand">🎉 Ulang Tahun Ayah</div>
+        <div style="margin-left: auto; display: flex; gap: 6px">
+          <a href="#galeri">Galeri</a>
+          <a href="#ucapan">Ucapan</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- HERO -->
+      <section class="hero" id="beranda">
+        <div>
+          <span class="badge">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2l2.39 4.84L20 7.27l-3.64 3.55L17.48 16 12 13.77 6.52 16l1.12-5.18L4 7.27l5.61-.43L12 2z"
+                stroke="#9fb1ff"
+              />
+            </svg>
+            <b>Selamat Ulang Tahun dan selamat hari Ayah!</b>
+          </span>
+          <h1 class="title">
+            My father
+            <span
+              style="
+                background: linear-gradient(
+                  90deg,
+                  var(--brand),
+                  var(--brand-2)
+                );
+                -webkit-background-clip: text;
+                color: transparent;
+              "
+              >tersayang</span
+            >
+          </h1>
+          <p class="subtitle">
+            Terima kasih untuk kerja keras, doa, dan kasih sayang selalu ayah
+            berikan pada kita.mungkin opal ga bisa rayain langsung tapi opal
+            buatin web ini khusus buat ayah,walau sedikit telat.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#ucapan">Tulis ucapan</a>
+            <button class="btn ghost" id="musicToggle" aria-pressed="false">
+              ▶️ Putar musik
+            </button>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="photo">
+            <!-- Ganti foto ini -->
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-11 at 11.51.51_a68ad153.jpg"
+              alt="Foto Ayah atau keluarga"
+            />
+          </div>
+          <div class="caption">foto jagoan</div>
+        </aside>
+      </section>
+
+      <!-- COUNTDOWN / ACARA -->
+
+      <!-- TIMELINE CERITA -->
+
+      <!-- GALERI -->
+      <section class="section" id="galeri">
+        <h2>Galeri kenangan</h2>
+        <p class="muted">foto ayah yang paling ganteng menurut ibu HEHE.</p>
+        <div class="gallery">
+          <div class="g">
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-13 at 14.47.42_578376c4.jpg"
+              alt="foto 1"
+            />
+          </div>
+          <div class="g tall">
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-13 at 14.42.17_f41a6e89.jpg"
+              alt="foto 2"
+            />
+          </div>
+          <div class="g">
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-13 at 14.47.41_3d5ace01.jpg"
+              alt="foto 3"
+            />
+          </div>
+          <div class="g">
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-13 at 14.47.41_41cc4e35.jpg"
+              alt="foto 4"
+            />
+          </div>
+          <div class="g tall">
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-11 at 11.45.55_c3370d85.jpg"
+              alt="foto 5"
+            />
+          </div>
+          <div class="g">
+            <img
+              src="Asset bla/WhatsApp Image 2025-11-13 at 14.47.41_7d95eef8.jpg"
+              alt="foto 6"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- UCAPAN / WHATSAPP -->
+      <section class="section" id="ucapan">
+        <h2>Dari kita semua buat ayah</h2>
+        <div class="card">
+          <div class="wishbox">
+            <input id="nama" placeholder="Namamu" />
+            <textarea
+              id="pesan"
+              placeholder="Tulis doa & ucapan terbaikmu untuk Ayah di sini"
+            ></textarea>
+            <button class="btn primary" id="kirimWA">
+              Selamat ulang tahun dan selamat hari Ayah!
+            </button>
+          </div>
+          <p class="muted" style="margin-top: 12px"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Dibuat dengan rasa bangga buat ayah oleh satu keluarga
+      <span style="opacity: 0.8"> <span id="year"></span> Keluarga</span>
+    </footer>
+
+    <!-- Floating buttons: Confetti + Back to top + Audio element -->
+    <div class="floating">
+      <button class="fab" id="confettiBtn" title="Rayakan!">🎊</button>
+      <a class="fab secondary" href="#beranda" title="Kembali ke atas">↑</a>
+    </div>
+
+    <audio id="bgm" preload="none">
+      <!-- Ganti file musik jika mau -->
+      <source
+        src="Asset bla/Happy Birthday To You - Piano Version _ 1Hour Continuous Play [9Tjhzkaj5jQ] after compres.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <script>
+      // ========================
+      // KONFIGURASI MUDAH DI SINI
+      // ========================
+      // 1) Atur tanggal & jam acara (WIB). Contoh: 20 Nov 2025, 19:00 WIB
+      const EVENT_ISO = "2025-11-20T19:00:00+07:00"; // GANTI tanggal-jamnya
+      // 2) Nomor WhatsApp tujuan (tanpa +). Contoh Indonesia: 62812xxxxxxx
+      const WA_NUMBER = "62812xxxxxxxx"; // GANTI nomor ayah / panitia
+
+      // Tampilkan tahun footnote
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Tampilkan tanggal terbaca manusia
+      try {
+        const d = new Date(EVENT_ISO);
+        const fmt = new Intl.DateTimeFormat("id-ID", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZoneName: "short",
+        });
+        document.getElementById("tanggalAcara").textContent = fmt.format(d);
+      } catch {
+        /* noop */
+      }
+
+      // Countdown
+      // Countdown (aktif hanya jika elemen ada)
+      const elDays = document.getElementById("cd-days");
+      const elHours = document.getElementById("cd-hours");
+      const elMins = document.getElementById("cd-mins");
+      const elSecs = document.getElementById("cd-secs");
+
+      if (elDays && elHours && elMins && elSecs) {
+        function tick() {
+          const now = Date.now();
+          const t = new Date(EVENT_ISO).getTime();
+          let diff = Math.max(0, t - now);
+          const s = Math.floor(diff / 1000);
+          const d = Math.floor(s / 86400);
+          const h = Math.floor((s % 86400) / 3600);
+          const m = Math.floor((s % 3600) / 60);
+          const sec = s % 60;
+          elDays.textContent = String(d);
+          elHours.textContent = String(h).padStart(2, "0");
+          elMins.textContent = String(m).padStart(2, "0");
+          elSecs.textContent = String(sec).padStart(2, "0");
+        }
+        tick();
+        setInterval(tick, 1000);
+      }
+
+      // WhatsApp
+      document.getElementById("kirimWA").addEventListener("click", () => {
+        const nama = document.getElementById("nama").value.trim() || "Teman";
+        const pesan =
+          document.getElementById("pesan").value.trim() ||
+          "Selamat ulang tahun, Ayah! Sehat selalu.";
+        const text = `Halo, ini ${nama}.%0A%0A${encodeURIComponent(
+          pesan
+        )}%0A%0A— dikirim dari Web Ulang Tahun Ayah`;
+        const url = `https://wa.me/${WA_NUMBER}?text=${text}`;
+        window.open(url, "_blank");
+      });
+
+      // Musik
+      const audio = document.getElementById("bgm");
+      const toggle = document.getElementById("musicToggle");
+      toggle.addEventListener("click", async () => {
+        if (audio.paused) {
+          try {
+            await audio.play();
+            toggle.textContent = "⏸️ Jeda musik";
+            toggle.setAttribute("aria-pressed", "true");
+          } catch (e) {
+            alert("Musik gagal diputar. Sentuh layar lalu coba lagi.");
+          }
+        } else {
+          audio.pause();
+          toggle.textContent = "▶️ Putar musik";
+          toggle.setAttribute("aria-pressed", "false");
+        }
+      });
+
+      // Confetti sederhana (tanpa library)
+      const confettiBtn = document.getElementById("confettiBtn");
+      confettiBtn.addEventListener("click", () => {
+        burstConfetti();
+      });
+
+      function burstConfetti() {
+        const N = 120; // jumlah confetti
+        for (let i = 0; i < N; i++) {
+          const p = document.createElement("span");
+          const size = 6 + Math.random() * 8;
+          const rot = Math.floor(Math.random() * 360);
+          p.style.position = "fixed";
+          p.style.left = Math.random() * 100 + "vw";
+          p.style.top = "-20px";
+          p.style.width = size + "px";
+          p.style.height = size + "px";
+          p.style.borderRadius = Math.random() < 0.4 ? "2px" : "50%";
+          p.style.transform = `rotate(${rot}deg)`;
+          p.style.background = `hsl(${Math.floor(
+            Math.random() * 360
+          )}, 80%, 60%)`;
+          p.style.zIndex = 1000;
+          p.style.pointerEvents = "none";
+          document.body.appendChild(p);
+          const x = (Math.random() * 2 - 1) * 40; // arah horizontal
+          const dur = 2600 + Math.random() * 1800;
+          p.animate(
+            [
+              { transform: `translate(0,0) rotate(${rot}deg)`, opacity: 1 },
+              {
+                transform: `translate(${x}vw, 100vh) rotate(${rot + 180}deg)`,
+                opacity: 0.9,
+              },
+            ],
+            { duration: dur, easing: "cubic-bezier(.2,.6,.3,1)" }
+          );
+          setTimeout(() => p.remove(), dur + 200);
+        }
+      }
+
+      // ===== PRANK LOGIC =====
+      (function () {
+        const prank = document.getElementById("prank");
+        const prankBtn = document.getElementById("prankBtn");
+        const prankText = document.getElementById("prankText");
+        const prankHint = document.getElementById("prankHint");
+        const prankSkip = document.getElementById("prankSkip");
+
+        if (!prank || !prankBtn) return;
+
+        // Izinkan disable via query ?no-prank=1
+        const params = new URLSearchParams(location.search);
+        if (params.get("no-prank") === "1") {
+          prank.remove();
+          return;
+        }
+
+        const stages = [
+          "Hmm… sekali lagi.",
+          "Yakin sudah kuat? Tekan lagi.",
+          "Dikit lagi, Ayah.",
+          "Terakhir… mungkin.",
+          "Sumpah ini terakhir.",
+          "Aduh licin—coba lagi ya.",
+          "Nah, tinggal satu!",
+        ];
+        let clicks = 0;
+
+        function playfulNudge() {
+          // Gerakkan tombol sedikit biar "licin"
+          const dx = (Math.random() * 2 - 1) * 14;
+          const dy = (Math.random() * 2 - 1) * 10;
+          prankBtn.style.transform = `translate(${dx}px, ${dy}px)`;
+          setTimeout(() => (prankBtn.style.transform = "translate(0,0)"), 450);
+        }
+
+        prankBtn.addEventListener("click", () => {
+          clicks++;
+          if (clicks < stages.length) {
+            prankText.textContent = stages[clicks - 1];
+            prankHint.textContent =
+              clicks % 2 === 0
+                ? "Kok belum? Tekan lagi 😆"
+                : "Serius, hampir selesai 😉";
+            if (clicks % 2 === 1) playfulNudge();
+          } else {
+            prankText.textContent = "3… 2… 1…";
+            prankBtn.disabled = true;
+            setTimeout(() => {
+              prank.remove();
+              try {
+                if (audio && audio.paused) audio.play();
+              } catch {}
+              burstConfetti();
+              setTimeout(() => {
+                alert(
+                  "Selamat Ulang Tahun, Ayah! Sehat selalu, panjang umur, dan penuh kebahagiaan. Kami sayang Ayah ❤️"
+                );
+                location.hash = "#ucapan";
+              }, 300);
+            }, 1000);
+          }
+        });
+
+        prankSkip?.addEventListener("click", () => prank.remove());
+      })();
+    </script>
+  </body>
+</html>
